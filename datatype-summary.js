@@ -49,10 +49,11 @@ console.log(typeof myFunction);
 
 let myYoutubeName="Sushil"
 let anotherName=myYoutubeName
-anotherName="sangam"
+anotherName="Sangam"
 
-console.log(myYoutubeName);
-console.log(anotherName);
+console.log(myYoutubeName); //Sushil
+console.log(anotherName); //Sangam
+
 
 
 let UserOne={
@@ -62,6 +63,6 @@ let UserOne={
 let UserTwo=UserOne
 UserTwo.email="sangam@gmail.com"
 
-console.log(UserOne.email);
-console.log(UserTwo.email);
+console.log(UserOne.email); //sangam@gmail.com
+console.log(UserTwo.email); //sangam@gmail.com
 
