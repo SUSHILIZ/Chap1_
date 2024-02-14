@@ -35,3 +35,33 @@ const myFunction = function(){
 }
 
 console.log(typeof myFunction);
+
+
+
+
+
+
+// ----------------------Memory------------------------
+
+//stack(primitive) Heap(Non-primitive)
+
+
+
+let myYoutubeName="Sushil"
+let anotherName=myYoutubeName
+anotherName="sangam"
+
+console.log(myYoutubeName);
+console.log(anotherName);
+
+
+let UserOne={
+    email:"sushil@gmail.com",
+    esewa:"user1@esewa"
+}
+let UserTwo=UserOne
+UserTwo.email="sangam@gmail.com"
+
+console.log(UserOne.email);
+console.log(UserTwo.email);
+
