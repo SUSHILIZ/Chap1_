@@ -1,10 +1,10 @@
 //array
 
-let myArray=[1,2,3,4,5]
+const myArray=[1,2,3,4,5]
 
-let myHeros=["Shaktiman","Ninja Hattori","Motu Patlu"]
+const myHeros=["Shaktiman","Ninja Hattori","Motu Patlu"]
 
-let myArray2= new Array(1,2,3,4,5)
+const myArray2= new Array(1,2,3,4,5)
 // console.log(myArray2[2]);     =>3
 //console.log(myArray2.length);   =>5
 
