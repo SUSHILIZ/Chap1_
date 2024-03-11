@@ -51,9 +51,38 @@ const users=[
 // console.log(users[1].id);
 // console.log(users[1].name);
 
-console.log(tinderUser);
-console.log(Object.keys(tinderUser));
-console.log(Object.values(tinderUser));
-console.log(Object.entries(tinderUser));
+// console.log(tinderUser);
+// console.log(Object.keys(tinderUser));
+// console.log(Object.values(tinderUser));
+// console.log(Object.entries(tinderUser));
 
-console.log(tinderUser.hasOwnProperty("isLoggedIn"));
+// console.log(tinderUser.hasOwnProperty("isLoggedIn"));
+
+//----------------------------De-structuring-----------------------------------------
+const course={
+    courseName:"Js In Hindi",
+    price:"999",
+    courseInstructor:"Hitesh"
+}
+// console.log(course.courseInstructor);
+
+const {courseInstructor}=course
+const {courseInstructor:instructor}=course //same as 69 but courseInstructor is made easier with replace with instructor and can be accessed with instructor
+console.log(courseInstructor); 
+console.log(instructor);
+
+
+//JSON API
+ 
+// {
+//     "name":"sushil",
+//     "coursename":"JS In Hindi",
+//     "price":"free"
+// }
+
+
+ [
+    {},
+    {},
+    {}
+ ]
