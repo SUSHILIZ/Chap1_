@@ -30,9 +30,9 @@ JsUser.email="pokhara@facebook.com"
 JsUser.greeting=function(){
 console.log("Hello Js User");
 }
-console.log(JsUser.greeting());
+JsUser.greeting();
 
 JsUser.greetingTwo=function(){
     console.log(`Hello Js User, ${this.name}`);
     }
-console.log(JsUser.greetingTwo());
+JsUser.greetingTwo();
