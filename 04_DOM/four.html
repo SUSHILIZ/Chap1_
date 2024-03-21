@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and remove element</title>
+</head>
+<body style="background-color: #212121; color: white;">
+        <ul class="language">
+            <li>Javascript</li>
+        </ul>
+    </div>
+</body>
+<script>
+    function addLanguage(langName) {
+        const li=document.createElement('li')
+        li.innerHTML=`${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("Typescript")
+
+//optimive way of above program----try to use this-----
+function addOPtiLanguage(langName){
+    const li=document.createElement('li')
+    li.appendChild(document.createTextNode(langName))
+    document.querySelector('.language').appendChild(li)
+}
+addOPtiLanguage("c++")
+
+//Edit 
+const firstLang=document.querySelector('li:first-child')
+// firstLang.innerHTML="sushil"
+
+//------optimised way of above
+const secondLang=document.querySelector('li:nth-child(2)')
+const newli=document.createElement('li')
+newli.textContent="mongo"
+secondLang.replaceWith(newli)
+
+//Another wait of edit
+const lastLang=document.querySelector('li:last-child')
+lastLang.outerHTML="<li>SQL</li>"
+
+//Remove
+const lastRemove=document.querySelector('li:last-child')
+lastRemove.remove()
+
+
+//This is a end of DOM let's move into project
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
