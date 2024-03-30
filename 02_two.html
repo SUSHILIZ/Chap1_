@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+<style>
+    #weight-guide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 22px;
+        height: 345px;
+    }
+    /* Adding a font */
+    *{
+        background-image: url('/istockphoto-1456126956-612x612.jpg');
+        color: black;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <form action="two.php">
+            <p>WEIGHT IN KG: <input type="text" id="weight"></p>
+            <p>HEIGHT IN CM: <input type="text" id="height"></p>
+            <button>Calculate</button>
+            <div id="results"></div>
+            <hr>
+            <div id="weight-guide">
+                <h3>BMI WEIGHT GUIDE</h3>
+                <p>Underweight = less than 18.5</p>
+                <p> Normal weight = 18.5–24.9</p>
+                <p>Overweight = 25–29.9</p>
+                <p>Obesity = BMI of 30 or greater</p>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <h3 style="position: absolute; bottom: 3px;">Created By Sushil</h3>
+    </footer>
+</body>
+<script>
+    const form = document.querySelector('form')
+    //This usecase give you a empty value
+    // const weight=parseInt(document.querySelector('#weight').value)
+    form.addEventListener('submit', (e) => {
+        e.preventDefault()
+
+        /* Getting input from user into weight variable.
+        Input is string so typecasting is necessary.*/
+        const weight = parseInt(document.querySelector('#weight').value)
+        /* Getting input from user into height variable.
+        Input is string so typecasting is necessary. */
+        const height = parseInt(document.querySelector('#height').value)
+        const result = document.querySelector('#results')
+        // Checking the user providing a proper
+        // value or not
+        if (height === '' || height < 0 || isNaN(height))
+            result.innerHTML = "Enter a valid height"
+        else if (weight === '' || weight < 0 || isNaN(weight))
+            result.innerHTML = "Enter a valid weight"
+        else {
+            const bmi = ((weight) / ((height * height) / 10000)).toFixed(2)
+            if(bmi<18.5){
+            result.innerHTML = `Underweight and your BMI is <span>${bmi}</span>`
+            }else if(bmi<=24.9&&bmi>=18.5){
+                result.innerHTML=`Normal and your BMI is <span>${bmi}</span>`
+            }else if(bmi<=29.9&&bmi>=25){
+                result.innerHTML=`Overweight and your BMI is <span>${bmi}</span>`
+            }else{
+                result.innerHTML=`Obesity and your BMI is <span>${bmi}</span>`
+            }
+        }
+    })
+</script>
+
+</html>
