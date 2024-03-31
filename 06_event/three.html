@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello </h1>
+    <button id="start">Start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    //setInterval() use
+//     setInterval(function(){
+//     console.log("Hello");
+//   },1000)
+
+// const clear= setInterval(function(str){
+//     console.log(str,Date.now());
+// },1000,"hi")
+  //in setInterval third parameter also can be used . In this example "hi".
+
+//   //clearInterval() use
+//   clearInterval(clear)
+
+  //let's make a simple program to start at start clicking and stop at stop clicking
+
+  let hero;
+  document.querySelector('#start').addEventListener('click',function(){
+     hero =setInterval(function(){
+        console.log("Sushil",Date.now());
+    },1000)
+  })
+
+  document.querySelector('#stop').addEventListener('click',function(){
+clearInterval(hero)
+  })
+  
+
+</script>
+</html>
