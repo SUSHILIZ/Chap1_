@@ -1,0 +1,43 @@
+<!-- Before reading this you need to study event section upto three.html -->
+
+<!-- Unlimited Colors -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Colors</title>
+</head>
+
+<body style="background-color:black; color: white;">
+    <h3>Start should change the background color every second</h3>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //generate a random colour
+    const randomColour = function () {
+        const hex = '01234567890ABCDEF';
+        let color = '#'
+        for (i = 0; i < 6; i++) {
+            color += hex[parseInt(Math.random() * 16)]
+        }
+        return color
+    }
+    let clear;
+    document.querySelector('#start').addEventListener('click', function () {
+        if(!clear){
+            clear = setInterval(function () {
+                document.body.style.backgroundColor = randomColour()
+            }, 1000)
+        }
+    })
+
+    document.querySelector('#stop').addEventListener('click', function () {
+        clearInterval(clear)
+        clear=null  //for reset purpose
+    })
+</script>
+
+</html>
