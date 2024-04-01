@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.center{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100vw;
+height: 80vh;
+}
+</style>
+
+<body style="background-color: #212121; color: white;">
+    <div class="center">
+        <button id="button">Click to get information</button>
+    </div>
+</body>
+<script>
+    const xhr = new XMLHttpRequest()  //starting
+    xhr.open('GET', 'https://api.github.com/users/hiteshchoudhary')
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+           const  followers = data.followers
+            const photo = data.avatar_url
+            const name=data.name //end in lecture. Other are assignment by hitesh chaudhary
+            button.addEventListener('click', function () {
+                button.innerHTML = `<div>
+                    <img src="${photo}" alt="GitHub user photo" width="100">
+                    <h2>Name:${name}</h2>
+                    <p>Followers: ${followers}</p>
+                    
+                </div>`;
+            })
+        }
+    }
+    xhr.send() 
+
+
+</script>
+
+</html>
