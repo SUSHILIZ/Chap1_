@@ -1,0 +1,47 @@
+<!-- same thing as done by xhr i.e.01 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.center{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100vw;
+height: 80vh;
+}
+</style>
+
+<body style="background-color: #212121; color: white;">
+    <div class="center">
+        <button id="button">Click to get information</button>
+    </div>
+</body>
+<script>
+fetch('https://api.github.com/users/SUSHILIZ')
+.then(function(response){
+return response.json()
+}).then(function(data){
+    const photo=data.avatar_url
+    const name=data.name
+    const followers=data.followers
+const button= document.querySelector('#button')
+button.addEventListener('click',function(){
+    button.innerHTML=`
+    <img src="${photo}" alt="Github image" width="100">
+    <h2>Name:${name}</h2>
+    <p>Followers:${followers}</p>
+    `
+})
+}).catch(function(error){
+console.log("Error:",error);
+})
+</script>
+
+</html>
+
