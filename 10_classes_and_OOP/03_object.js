@@ -21,10 +21,10 @@ createUser.prototype.printMe = function(){
     console.log(`price is ${this.score}`);
 }
 
-const chai = new createUser("chai", 25)
-const tea = createUser("tea", 250)
+const coffee = new createUser("coffee", 120)
+const tea = createUser("tea", 50)
 
-chai.printMe()
+coffee.printMe()
 
 
 /*
